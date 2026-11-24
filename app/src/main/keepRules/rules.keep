@@ -1,0 +1,10 @@
+# Reglas R8 (solo aplican si activas optimization { enable = true } en release).
+
+# Gson serializa/deserializa estos DTO por reflexión: no se pueden renombrar.
+-keep class cl.DSY1105.reservasalas.data.dto.** { *; }
+
+# Retrofit con funciones suspend de Kotlin
+-keepattributes Signature, InnerClasses, EnclosingMethod, *Annotation*
+-keep,allowobfuscation,allowshrinking class kotlin.coroutines.Continuation
+-keep,allowobfuscation,allowshrinking interface retrofit2.Call
+-keep,allowobfuscation,allowshrinking class retrofit2.Response
